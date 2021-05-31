@@ -34,34 +34,29 @@ public class QuickSort
                 int temp = data[i];
                 data[i] = data[j];
                 data[j] = temp;
-                
+
                 i ++;
                 j --;
             }
+
         } while (i <= j);
 
         /*
-         * A sublist still exists to the left of j's position.
+         * Recursive method calls:
          */
-        if (start < j)
+        if (start < j) // A sublist still exists to the left of j's position.
             quickSort(data, start, j);
 
-        /*
-         * A sublist still exists to the right of i's position.
-         */
-        if (i < end)
+        if (i < end) // A sublist still exists to the right of i's position.
             quickSort(data, i, end);
 
         depth --;
     }
 
-    public static void printSublist(int[] data, int start, int end) {
-        for (int i = start; i <= end; i++) {
-            System.out.print(data[i] + " ");
-        }
-        System.out.println();
-    }
-
+    /**
+     * Print the list sequence.
+     * @param data
+     */
     public static void printList(int[] data) {
         for (int item : data) {
             System.out.print(item + " ");
