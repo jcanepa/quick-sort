@@ -18,7 +18,7 @@ public class QuickSort
          */
         do {
             if (DEBUG)
-                System.out.println("[" + pivot + "]");
+                System.out.println("@" + pivot);
                 printList(data);
 
             while (data[i] < pivot)
@@ -27,15 +27,14 @@ public class QuickSort
             while (data[j] > pivot)
                 j--;
 
+            /*
+             * Swap two elements and progress pointers one step.
+             */
             if (i <= j) {
-                /*
-                 * Swap two elements
-                 */
                 int temp = data[i];
                 data[i] = data[j];
                 data[j] = temp;
-
-                // Move forward one step.
+                
                 i ++;
                 j --;
             }
